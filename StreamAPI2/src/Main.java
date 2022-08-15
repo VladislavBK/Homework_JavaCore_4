@@ -29,9 +29,8 @@ public class Main {
         System.out.println(highAgeStream);
 
         List<Person> education = persons.stream()
-                .filter(woman -> woman.getEducation().equals(Education.HIGHER))
+                .filter(highEducation -> highEducation.getEducation().equals(Education.HIGHER))
                 .filter(woman -> woman.getSex().equals(Sex.WOMAN) == woman.getAge() >= 18 && woman.getAge() <= 60)
-                .filter(man -> man.getEducation().equals(Education.HIGHER))
                 .filter(man -> man.getSex().equals(Sex.MAN) == man.getAge() >= 18 && man.getAge() <= 65)
                 .sorted(Comparator.comparing(Person::getFamily))
                 .collect(Collectors.toList());
